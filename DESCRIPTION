@@ -1,0 +1,16 @@
+Package: cec2013
+Type: Package
+Title: Benchmark Functions for the Special Session and Competition on Real-Parameter Single Objective Optimization at CEC-2013
+Version: 0.1
+Date: 2013-02-08
+Author: Mauricio Zambrano-Bigiarini [aut, cre], Yasser Gonzalez Fernandez [aut]
+Authors@R: c(person("Mauricio", "Zambrano-Bigiarini", email="mzb.devel@gmail.com", role=c("aut","cre")), person("Yasser", "Gonzalez Fernandez", email="ygonzalezfernandez@gmail.com", role=c("aut")) )
+Maintainer: Mauricio Zambrano-Bigiarini <mzb.devel@gmail.com>
+Description: This package provides R wrappers for the C implementation of the 28 benchmark functions for the  Special Session and Competition on Real-Parameter Single Objective Optimization at CEC-2013. The original C code by Santosh Tiwari and related documentation are available at http://web.mysites.ntu.edu.sg/epnsugan/PublicSite/Shared\%20Documents/Forms/AllItems.aspx/. Bugs reports/comments/questions are very welcomed (in English, Spanish or Italian).
+License: GPL (>=2)
+Depends: R (>= 2.13.0)
+Imports: 
+Suggests: 
+URL: http://www.rforge.net/cec2013, http://cran.r-project.org/web/packages/cec2013
+LazyLoad: yes
+ByteCompile: TRUE
