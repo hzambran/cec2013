@@ -4,16 +4,18 @@
   Last Modified on 27th Jan. 2013
 */
 
+#include <R.h>
 
-//#include <WINDOWS.H>      
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
-#include <malloc.h>
 
 #define INF 1.0e99
 #define EPS 1.0e-14
 #define E  2.7182818284590452353602874713526625
+#ifndef PI
 #define PI 3.1415926535897932384626433832795029
+#endif
 
 
 void sphere_func (double *, double *, int , double *,double *, int); /* Sphere */
@@ -31,7 +33,7 @@ void schwefel_func (double *, double *, int , double *,double *, int); /* Schwef
 void katsuura_func (double *, double *, int , double *,double *, int); /* Katsuura */
 void bi_rastrigin_func (double *, double *, int , double *,double *, int); /* Lunacek Bi_rastrigin */
 void grie_rosen_func (double *, double *, int , double *,double *, int); /* Griewank-Rosenbrock  */
-void escaffer6_func (double *, double *, int , double *,double *, int); /* Expanded Scaffer¡¯s F6  */
+void escaffer6_func (double *, double *, int , double *,double *, int); /* Expanded Scafferï¿½ï¿½s F6  */
 void step_rastrigin_func (double *, double *, int , double *,double *, int); /* Noncontinuous Rastrigin's  */
 void cf01 (double *, double *, int , double *,double *, int); /* Composition Function 1 */
 void cf02 (double *, double *, int , double *,double *, int); /* Composition Function 2 */
@@ -50,10 +52,12 @@ void cf_cal(double *, double *, int, double *,double *,double *,double *,int);
 
 extern double *OShift,*M,*y,*z,*x_bound;;
 extern int ini_flag,n_flag,func_flag;
+extern char *extdata;
 
 void test_func(double *x, double *f, int nx, int mx,int func_num)
 {
-	int cf_num=10,i;
+
+	int cf_num=10,i,ret;
 	if (ini_flag==1)
 	{
 		if ((n_flag!=nx)||(func_flag!=func_num))
@@ -65,7 +69,7 @@ void test_func(double *x, double *f, int nx, int mx,int func_num)
 	if (ini_flag==0)
 	{
 		FILE *fpt;
-		char FileName[30];
+		char FileName[PATH_MAX];
 		free(M);
 		free(OShift);
 		free(y);
@@ -77,44 +81,42 @@ void test_func(double *x, double *f, int nx, int mx,int func_num)
 		for (i=0; i<nx; i++)
 			x_bound[i]=100.0;
 		
-		sprintf(FileName, "input_data/M_D%d.txt", nx);
+		sprintf(FileName, "%s/M_D%d.txt", extdata, nx);
 		fpt = fopen(FileName,"r");
 		if (fpt==NULL)
 		{
-		    printf("\n Error: Cannot open input file for reading \n");
+		    error("Cannot open input file for reading");
 		}
 
 		M=(double*)malloc(cf_num*nx*nx*sizeof(double));
 		if (M==NULL)
-			printf("\nError: there is insufficient memory available!\n");
+			error("There is insufficient memory available!");
 		for (i=0; i<cf_num*nx*nx; i++)
 		{
-				fscanf(fpt,"%lf",&M[i]);
-				//printf("M[%d] = %LE,",i+1,M[i]);
+				ret = fscanf(fpt,"%lf",&M[i]);
 		}
 		fclose(fpt);
 		
 
-		fpt=fopen("input_data/shift_data.txt","r");
+		sprintf(FileName, "%s/shift_data.txt", extdata);
+		fpt=fopen(FileName,"r");
 		if (fpt==NULL)
 		{
-			printf("\n Error: Cannot open input file for reading \n");
+			error("Cannot open input file for reading");
 		}
 		OShift=(double *)malloc(nx*cf_num*sizeof(double));
 		if (OShift==NULL)
-			printf("\nError: there is insufficient memory available!\n");
+			error("There is insufficient memory available!");
 		for(i=0;i<cf_num*nx;i++)
 		{
-				fscanf(fpt,"%lf",&OShift[i]);
+				ret = fscanf(fpt,"%lf",&OShift[i]);
 		}
 		fclose(fpt);
 
 		n_flag=nx;
 		func_flag=func_num;
 		ini_flag=1;
-		printf("Function has been initialized!\n");
 	}
-
 
 	for (i = 0; i < mx; i++)
 	{
@@ -775,7 +777,7 @@ void grie_rosen_func (double *x, double *f, int nx, double *Os,double *Mr,int r_
 }
 
 
-void escaffer6_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Expanded Scaffer¡¯s F6  */
+void escaffer6_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Expanded Scafferï¿½ï¿½s F6  */
 {
     int i;
     double temp1, temp2;
@@ -1073,4 +1075,3 @@ void cf_cal(double *x, double *f, int nx, double *Os,double * delta,double * bia
     }
 	free(w);
 }
-
