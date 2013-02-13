@@ -50,7 +50,7 @@ void asyfunc (double *, double *x, int, double);
 void oszfunc (double *, double *, int);
 void cf_cal(double *, double *, int, double *,double *,double *,double *,int);
 
-extern double *OShift,*M,*y,*z,*x_bound;;
+extern double *OShift,*M,*y,*z,*x_bound;
 extern int ini_flag,n_flag,func_flag;
 extern char *extdata;
 
@@ -94,6 +94,10 @@ void test_func(double *x, double *f, int nx, int mx,int func_num)
 		for (i=0; i<cf_num*nx*nx; i++)
 		{
 				ret = fscanf(fpt,"%lf",&M[i]);
+				if (ret != 1)
+				{
+				    error("Error reading from the input file");
+				}
 		}
 		fclose(fpt);
 		
@@ -110,6 +114,10 @@ void test_func(double *x, double *f, int nx, int mx,int func_num)
 		for(i=0;i<cf_num*nx;i++)
 		{
 				ret = fscanf(fpt,"%lf",&OShift[i]);
+				if (ret != 1)
+				{
+				    error("Error reading from the input file");
+				}
 		}
 		fclose(fpt);
 
@@ -429,7 +437,7 @@ void ackley_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag
 void weierstrass_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Weierstrass's  */
 {
     int i,j,k_max;
-    double sum,sum2, a, b;
+    double sum,sum2 = 0.0, a, b;
 
 	shiftfunc(x, y, nx, Os);
 	for (i=0; i<nx; i++)//shrink to the orginal search range
@@ -1005,7 +1013,7 @@ void asyfunc (double *x, double *xasy, int nx, double beta)
 void oszfunc (double *x, double *xosz, int nx)
 {
 	int i,sx;
-	double c1,c2,xx;
+	double c1,c2,xx = 0;
     for (i=0; i<nx; i++)
     {
 		if (i==0||i==nx-1)
