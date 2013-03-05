@@ -33,7 +33,7 @@ void schwefel_func (double *, double *, int , double *,double *, int); /* Schwef
 void katsuura_func (double *, double *, int , double *,double *, int); /* Katsuura */
 void bi_rastrigin_func (double *, double *, int , double *,double *, int); /* Lunacek Bi_rastrigin */
 void grie_rosen_func (double *, double *, int , double *,double *, int); /* Griewank-Rosenbrock  */
-void escaffer6_func (double *, double *, int , double *,double *, int); /* Expanded Scaffer��s F6  */
+void escaffer6_func (double *, double *, int , double *,double *, int); /* Expanded Scaffer's F6  */
 void step_rastrigin_func (double *, double *, int , double *,double *, int); /* Noncontinuous Rastrigin's  */
 void cf01 (double *, double *, int , double *,double *, int); /* Composition Function 1 */
 void cf02 (double *, double *, int , double *,double *, int); /* Composition Function 2 */
@@ -785,7 +785,7 @@ void grie_rosen_func (double *x, double *f, int nx, double *Os,double *Mr,int r_
 }
 
 
-void escaffer6_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Expanded Scaffer��s F6  */
+void escaffer6_func (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Expanded Scaffer's F6  */
 {
     int i;
     double temp1, temp2;
