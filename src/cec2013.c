@@ -1,7 +1,7 @@
 /* File cec2013.c
 Part of the cec2013 R package, http://www.rforge.net/cec2013/ ; 
                                http://cran.r-project.org/web/packages/cec2013
-Copyright 2013 Yasser Gonzalez Fernandez & Mauricio Zambrano-Bigiarini
+Copyright 2013 Yasser Gonzalez-Fernandez & Mauricio Zambrano-Bigiarini
 Distributed under GPL 3 or later
 */
 

@@ -1,7 +1,7 @@
 # File cec2013.R
 # Part of the cec2013 R package, http://www.rforge.net/cec2013/ ; 
 #                                http://cran.r-project.org/web/packages/cec2013
-# Copyright 2013 Mauricio Zambrano-Bigiarini & Yasser Gonzalez Fernandez
+# Copyright 2013 Mauricio Zambrano-Bigiarini & Yasser Gonzalez-Fernandez
 # Distributed under GPL 3 or later
 
 ################################################################################

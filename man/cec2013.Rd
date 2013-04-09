@@ -1,7 +1,7 @@
 %% File cec2013.Rd
 %% Part of the cec2013 R package, http://www.rforge.net/cec2013/ ; 
 %%                                http://cran.r-project.org/web/packages/cec2013
-%% Copyright 2013 Mauricio Zambrano-Bigiarini & Yasser Gonzalez Fernandez
+%% Copyright 2013 Mauricio Zambrano-Bigiarini & Yasser Gonzalez-Fernandez
 %% Distributed under GPL 3 or later
 
 \name{cec2013}
@@ -26,7 +26,7 @@ numeric, with the value of the i-th CEC-2013 benchmark function evaluated in the
 }
 
 \author{
-Yasser Gonzalez Fernandez, \email{ygonzalezfernandez@gmail.com}, Mauricio Zambrano-Bigiarini, \email{mzb.devel@gmail.com}
+Yasser Gonzalez-Fernandez, \email{ygonzalezfernandez@gmail.com}, Mauricio Zambrano-Bigiarini, \email{mzb.devel@gmail.com}
 }
 
 \examples{

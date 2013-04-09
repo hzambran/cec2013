@@ -6,7 +6,7 @@ version <- desc$Version
 
 citEntry(entry = "manual",
 	title = "cec2013: Benchmark Functions for the Special Session and Competition on Real-Parameter Single Objective Optimization at CEC-2013",
-	author = personList(person("Mauricio", "Zambrano-Bigiarini", email="mzb.devel@gmail.com", role=c("aut","cre")), person("Yasser", "Gonzalez Fernandez", email="ygonzalezfernandez@gmail.com", role=c("aut"))),
+	author = personList(person("Mauricio", "Zambrano-Bigiarini", email="mzb.devel@gmail.com", role=c("aut","cre")), person("Yasser", "Gonzalez-Fernandez", email="ygonzalezfernandez@gmail.com", role=c("aut"))),
 	year = year,
 	note = paste("{R} package version", version),
 	url = "http://CRAN.R-project.org/package=cec2013",
