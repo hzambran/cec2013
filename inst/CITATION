@@ -1,8 +1,7 @@
-citHeader("To cite package 'cec2013' in publications use:")
+citHeader("To cite cec2013 in publications use:")
 
-desc <- packageDescription("cec2013")
-year <- sub("^([[:digit:]]{4})-[[:digit:]]{2}-[[:digit:]]{2}$", "\\1", desc$Date)
-version <- desc$Version
+year <- sub("^([[:digit:]]{4})-[[:digit:]]{2}-[[:digit:]]{2}$", "\\1", meta$Date)
+version <- meta$Version
 
 citEntry(entry = "manual",
 	title = "cec2013: Benchmark Functions for the Special Session and Competition on Real-Parameter Single Objective Optimization at CEC-2013",
@@ -12,6 +11,6 @@ citEntry(entry = "manual",
 	url = "http://CRAN.R-project.org/package=cec2013",
 	textVersion = paste("Mauricio Zambrano-Bigiarini and Yasser Gonzalez-Fernandez. (", year, ") ",
         "cec2013: Benchmark Functions for the Special Session and Competition on Real-Parameter Single Objective Optimization at CEC-2013",
-        paste("R package version", version), 
+        paste("R package version", version),
         ". URL http://CRAN.R-project.org/package=cec2013",
         ".", sep = ""))
