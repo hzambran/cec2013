@@ -1,7 +1,7 @@
 %% File cec2013.Rd
 %% Part of the cec2013 R package, http://www.rforge.net/cec2013/ ; 
 %%                                http://cran.r-project.org/web/packages/cec2013
-%% Copyright 2013 Mauricio Zambrano-Bigiarini & Yasser Gonzalez-Fernandez
+%% Copyright 2013-2015 Mauricio Zambrano-Bigiarini & Yasser Gonzalez-Fernandez
 %% Distributed under GPL 3 or later
 
 \name{cec2013}
@@ -22,7 +22,7 @@ cec2013(i, x)
 numeric, with the value of the i-th CEC-2013 benchmark function evaluated in the vector \code{x} or for each row of \code{x} when the latter is a matrix
 }
 \references{
-\cite{J. J. Liang, B-Y. Qu, P. N. Suganthan, Alfredo G. Hernandez-Diaz, \href{http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2013/Definitions\%20of\%20\%20CEC\%2013\%20benchmark\%20suite\%200117.pdf}{Problem Definitions and Evaluation Criteria for the CEC 2013 Special Session and Competition on Real-Parameter Optimization}, Technical Report 201212, Computational Intelligence Laboratory, Zhengzhou University, Zhengzhou China and  Technical Report, Nanyang Technological University, Singapore, January 2013}
+\cite{J. J. Liang, B-Y. Qu, P. N. Suganthan, Alfredo G. Hernandez-Diaz, Problem Definitions and Evaluation Criteria for the CEC 2013 Special Session and Competition on Real-Parameter Optimization, , Technical Report 201212, Computational Intelligence Laboratory, Zhengzhou University, Zhengzhou China and  Technical Report, Nanyang Technological University, Singapore, January 2013. \url{http://tracer.uc3m.es/tws/pso/neighborhood.html}. Last visited [21-Jan-2015] }
 }
 
 \author{
