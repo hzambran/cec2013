@@ -17,6 +17,8 @@
 #define PI 3.1415926535897932384626433832795029
 #endif
 
+#define CEC_PATH_MAX 2048
+
 
 void sphere_func (double *, double *, int , double *,double *, int); /* Sphere */
 void ellips_func(double *, double *, int , double *,double *, int); /* Ellipsoidal */
@@ -69,7 +71,7 @@ void test_func(double *x, double *f, int nx, int mx,int func_num)
 	if (ini_flag==0)
 	{
 		FILE *fpt;
-		char FileName[PATH_MAX];
+		char FileName[CEC_PATH_MAX];
 		free(M);
 		free(OShift);
 		free(y);
